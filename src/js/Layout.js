@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/ScrollToTop";
 
 import { Home } from "./views/Home";
+import { Contact } from "./views/Contact";
+import { Us } from "./views/Us";
+import { Brands } from "./views/Brands";
 import injectContext from "./store/Context";
 
 //create your first component
@@ -18,6 +21,15 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/Brands">
+							<Brands />
+						</Route>
+						<Route exact path="/Contact">
+							<Contact />
+						</Route>
+						<Route exact path="/Us">
+							<Us />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
