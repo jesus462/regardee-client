@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/ScrollToTop";
 
 import { Home } from "./views/Home";
 import { Contact } from "./views/Contact";
@@ -17,25 +16,23 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/Brands">
-							<Brands />
-						</Route>
-						<Route exact path="/Contact">
-							<Contact />
-						</Route>
-						<Route exact path="/Us">
-							<Us />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-				</ScrollToTop>
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/Brands">
+						<Brands />
+					</Route>
+					<Route exact path="/Contact">
+						<Contact />
+					</Route>
+					<Route exact path="/Us">
+						<Us />
+					</Route>
+					<Route>
+						<h1>Not found!</h1>
+					</Route>
+				</Switch>
 			</BrowserRouter>
 		</div>
 	);

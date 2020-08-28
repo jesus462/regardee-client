@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/Context";
 import { Image } from "cloudinary-react";
 import { Navbar, Nav, Button } from "react-bootstrap";
@@ -12,6 +12,7 @@ const NavbarStyled = styled(Navbar)`
 	position: sticky;
 	top: 0;
 	padding: 0 16px;
+	z-index: 100;
 
 	.navbar-brand {
 		margin: 0;
@@ -49,6 +50,13 @@ const LinkStyled = styled(Link)`
 	font-weight: 600;
 	color: black;
 	text-align: center;
+
+	:hover,
+	:active {
+		text-decoration: underline;
+		color: black;
+		font-weight: bold;
+	}
 `;
 
 export const NavBar = () => {
@@ -57,10 +65,10 @@ export const NavBar = () => {
 	return (
 		<NavbarStyled expand="md">
 			<Navbar.Brand>
-				<Link to="/">
+				<Link onClick={() => window.scrollTo(0, 0)} to="/">
 					<Logo showplay cloudName={store.cloudinary.userName} publicId="Regardee/regardee-dark-purple" />
 				</Link>
-				<Link to="/">
+				<Link onClick={() => window.scrollTo(0, 0)} to="/">
 					<Logo
 						responsive_showplay
 						cloudName={store.cloudinary.userName}
@@ -74,17 +82,23 @@ export const NavBar = () => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<ContainerLinks>
-					<LinkStyled to="/Us">NOSOTROS</LinkStyled>
-					<LinkStyled to="/Brands">MARCAS</LinkStyled>
-					<LinkStyled to="/Contact">CONTACTO</LinkStyled>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)} to="/Us">
+						NOSOTROS
+					</LinkStyled>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)} to="/Brands">
+						MARCAS
+					</LinkStyled>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)} to="/Contact">
+						CONTACTO
+					</LinkStyled>
 				</ContainerLinks>
 				<Nav>
-					<LinkStyled>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)}>
 						<StyledButton showplay responsive_showplay>
 							REGÍSTRATE
 						</StyledButton>
 					</LinkStyled>
-					<LinkStyled>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)}>
 						<StyledButton size showplay>
 							INICIAR SESIÓN
 						</StyledButton>
