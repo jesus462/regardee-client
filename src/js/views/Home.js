@@ -71,6 +71,12 @@ const ButtonStyled = styled(Button)`
 	color: white;
 	margin: 15px 0;
 	padding: 6px 3px;
+	:hover,
+	:active {
+		background-color: #b498ab !important;
+		border-color: #b498ab !important;
+		box-shadow: none !important;
+	}
 `;
 const Divider = styled.div`
 	height: 2px;
@@ -98,7 +104,9 @@ export const Home = () => {
 				/>
 				<Header>Empieza una nueva experiencia de compra</Header>
 				<ImagesVarious cloudName={store.cloudinary.userName} publicId="Regardee/the-box" />
-				<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				<Link onClick={() => window.scrollTo(0, 0)} to="/Signin">
+					<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				</Link>
 			</Container>
 			<Divider />
 			<Container>
@@ -119,7 +127,9 @@ export const Home = () => {
 							Recibe una selección de piezas en función de tu estilo, tallas y presupuesto. Te puedes
 							probar todo, elegir y pagar lo que te gusta, y devolver lo que no va contigo.
 						</Resume>
-						<ButtonStyled>MÁS INFO</ButtonStyled>
+						<Link onClick={() => window.scrollTo(0, 0)} to="/Us">
+							<ButtonStyled>MÁS INFO</ButtonStyled>
+						</Link>
 					</ContainerInfoMedia>
 					<ContainerInfoMedia backColor>
 						<VideoStyled controls publicId="Regardee/making-box" cloudName={store.cloudinary.userName} />
@@ -141,7 +151,9 @@ export const Home = () => {
 							tus respuestas. Está atent@ al calendario de rondas, paga el fee de participación y recibe
 							tu box.
 						</Resume>
-						<ButtonStyled>MÁS INFO</ButtonStyled>
+						<Link onClick={() => window.scrollTo(0, 0)} to="/Us">
+							<ButtonStyled>MÁS INFO</ButtonStyled>
+						</Link>
 					</ContainerInfoMedia>
 				</ContainerIn>
 			</Container>
@@ -154,7 +166,9 @@ export const Home = () => {
 			<Container>
 				<Header>Empieza tu experiencia regardée</Header>
 				<ImagesVarious cloudName={store.cloudinary.userName} publicId="Regardee/the-box" />
-				<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				<Link onClick={() => window.scrollTo(0, 0)} to="/Signin">
+					<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				</Link>
 			</Container>
 		</div>
 	);

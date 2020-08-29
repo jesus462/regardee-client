@@ -37,6 +37,12 @@ const StyledButton = styled(Button)`
 	@media (max-width: 767px) {
 		display: ${props => (props.responsive_showplay ? "inline-block" : "none")};
 	}
+	:hover,
+	:active {
+		background-color: #b498ab !important;
+		border-color: #b498ab !important;
+		box-shadow: none !important;
+	}
 `;
 const ContainerLinks = styled(Nav)`
 	display: flex;
@@ -93,12 +99,12 @@ export const NavBar = () => {
 					</LinkStyled>
 				</ContainerLinks>
 				<Nav>
-					<LinkStyled onClick={() => window.scrollTo(0, 0)}>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)} to="/Signin">
 						<StyledButton showplay responsive_showplay>
 							REGÍSTRATE
 						</StyledButton>
 					</LinkStyled>
-					<LinkStyled onClick={() => window.scrollTo(0, 0)}>
+					<LinkStyled onClick={() => window.scrollTo(0, 0)} to="/Login">
 						<StyledButton size showplay>
 							INICIAR SESIÓN
 						</StyledButton>

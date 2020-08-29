@@ -99,6 +99,12 @@ const ButtonStyled = styled(Button)`
 	color: white;
 	margin: 15px 0;
 	padding: 6px 3px;
+	:hover,
+	:active {
+		background-color: #b498ab !important;
+		border-color: #b498ab !important;
+		box-shadow: none !important;
+	}
 `;
 const ImagesVarious = styled(Image)`
 	height: ${props => (props.brand ? "150px" : "60px")};
@@ -192,7 +198,9 @@ export const Us = () => {
 			<Container>
 				<Header>Empieza tu experiencia regardée</Header>
 				<ImagesVarious cloudName={store.cloudinary.userName} publicId="Regardee/the-box" />
-				<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				<Link onClick={() => window.scrollTo(0, 0)} to="/Signin">
+					<ButtonStyled>REGÍSTRATE</ButtonStyled>
+				</Link>
 			</Container>
 		</div>
 	);

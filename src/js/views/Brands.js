@@ -78,6 +78,12 @@ const ButtonStyled = styled(Button)`
 	color: white;
 	margin: 15px 0;
 	padding: 6px 3px;
+	:hover,
+	:active {
+		background-color: #b498ab !important;
+		border-color: #b498ab !important;
+		box-shadow: none !important;
+	}
 `;
 
 export const Brands = () => {
@@ -107,7 +113,9 @@ export const Brands = () => {
 				<Resume>-Llegarás a nuevos consumidores (así no compren al recibir la primera caja)</Resume>
 				<Resume>-Obtendrás información de consumidores potenciales</Resume>
 				<Resume>-Tendrás ventas a un margen menor que el de tiendas de terceros.</Resume>
-				<ButtonStyled>CONTÁCTANOS</ButtonStyled>
+				<Link onClick={() => window.scrollTo(0, 0)} to="/Contact">
+					<ButtonStyled>CONTÁCTANOS</ButtonStyled>
+				</Link>
 			</Container>
 		</div>
 	);
